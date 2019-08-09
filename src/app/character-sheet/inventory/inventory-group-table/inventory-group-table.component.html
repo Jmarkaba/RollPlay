@@ -1,0 +1,42 @@
+<div class="d-flex flex-column">
+    <div class="table-title d-flex flex-wrap">
+        <span><strong>{{ title | titlecase }}</strong></span>
+    </div>
+    <table mdbTable hover="true" small="true" borderless="true">
+        <thead>
+            <tr class="table-head-rounded">
+                <th [mdbTableSort]="groupData" sortBy="name">Item</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of groupData; let idx = index">
+                <tr mdbTableCol>
+                    <td class="item-name" scope="row" (click)="toggleExpansion(idx)">
+                        <span>{{ item.name | titlecase }}</span>
+                    </td>
+                    <td>
+                        <div class="d-flex flex-wrap justify-content-center align-content-center">
+                            <div class="quantity d-flex">
+                                <span>{{ item.quantity }}</span>
+                            </div>
+                        </div>
+                        
+                    </td>
+                    <td>
+                        <a mdbBtn floating="true" (click)="delete(idx)">
+                            <mdb-icon class="red-text" fas icon="trash"></mdb-icon>
+                        </a>
+                    </td>
+                </tr>
+                <div *ngIf="selected === idx" id="collapsible-{idx}" 
+                class="d-flex flex-column justify-self-start">
+                    <span><strong>Desc:&nbsp;</strong>{{ item.description }}</span>
+                    <span *ngIf="item.selling_price"><strong>Est. Value:&nbsp;</strong>{{ item.selling_price }}</span>
+                </div>
+            </ng-container>
+            
+        </tbody>
+    </table>
+</div>
