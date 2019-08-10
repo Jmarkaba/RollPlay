@@ -4,33 +4,39 @@ import {
     Inventory, 
     Ability, 
     Weapon, 
-    Armor 
+    Armor, 
+    Money
 } from "src/common/models/character";
 
-const TestWeapon: Weapon = { 
+export const TestMoney: Money = {
+    gold: 200,
+    silver: 0,
+}
+export const TestWeapon: Weapon = { 
     name: 'sword', 
     description: 'A shortsword', 
     damage_roll: '3d6', 
     bonus_damage: 5,
     penetration: 2,
 };
-const TestArmor: Armor = {
+export const TestArmor: Armor = {
     name: 'leather armor',
     description: 'Basic leather armor',
     armor_class: 2,
     selling_price: 22
 };
 export const TestInventory: Inventory = {
-    gold: 200,
+    money: TestMoney,
     items: [
         { name: 'apple', description: 'A delicious red apple', quantity: 3 },
-        TestWeapon,
-        TestArmor,
         { name: 'shovel', description: 'For digging', quantity: 1}
-    ]
+    ],
+    weapons: [TestWeapon],
+    armor: [TestArmor]
 };
-const TestAbilities: Ability[] = [
-    { name: 'Strength', type: AbilityType.PASSIVE, description: 'Makes you stronger' }
+export const TestAbilities: Ability[] = [
+    { name: 'Strength', type: AbilityType.PASSIVE, description: 'Makes you stronger' },
+    { name: 'Shields', type: AbilityType.SKILL, description: 'Temporarily increases your health', effects: { current_hp: 10 } }
 ];
 export const TestCharacter: Character = {
     name: 'Testies Tester',

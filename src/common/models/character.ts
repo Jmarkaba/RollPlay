@@ -1,5 +1,10 @@
 import { AbilityType, RegenType } from '../enums/character-types';
 
+export interface Money {
+    gold?: number;
+    silver?: number;
+    copper?: number;
+}
 
 export interface Item {
     name: string;
@@ -17,10 +22,10 @@ export interface Armor extends Item {
     armor_class: number;
 }
 export interface Inventory {
-    gold?: number;
-    silver?: number;
-    copper?: number;
+    money: Money;
     items: Item[];
+    weapons: Weapon[];
+    armor: Armor[];
 }
 
 

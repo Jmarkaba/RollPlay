@@ -9,7 +9,7 @@ import { Inventory } from 'src/common/models/character';
 })
 export class InventoryComponent {
 
-    @Input('inventory') private inventory: Inventory;
+    @Input('inventory') inventory: Inventory;
 
     constructor() {}
 

@@ -1,42 +1,46 @@
-<div class="d-flex flex-column">
-    <div class="table-title d-flex flex-wrap">
-        <span><strong>{{ title | titlecase }}</strong></span>
-    </div>
-    <table mdbTable hover="true" small="true" borderless="true">
-        <thead>
-            <tr class="table-head-rounded">
-                <th [mdbTableSort]="groupData" sortBy="name">Item</th>
-                <th>Quantity</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let item of groupData; let idx = index">
-                <tr mdbTableCol>
-                    <td class="item-name" scope="row" (click)="toggleExpansion(idx)">
-                        <span>{{ item.name | titlecase }}</span>
-                    </td>
-                    <td>
-                        <div class="d-flex flex-wrap justify-content-center align-content-center">
-                            <div class="quantity d-flex">
-                                <span>{{ item.quantity }}</span>
-                            </div>
-                        </div>
-                        
-                    </td>
-                    <td>
-                        <a mdbBtn floating="true" (click)="delete(idx)">
-                            <mdb-icon class="red-text" fas icon="trash"></mdb-icon>
-                        </a>
-                    </td>
-                </tr>
-                <div *ngIf="selected === idx" id="collapsible-{idx}" 
-                class="d-flex flex-column justify-self-start">
-                    <span><strong>Desc:&nbsp;</strong>{{ item.description }}</span>
-                    <span *ngIf="item.selling_price"><strong>Est. Value:&nbsp;</strong>{{ item.selling_price }}</span>
-                </div>
-            </ng-container>
+ <div class="d-flex flex-column">
+
+     <div class="d-flex table-title">
+         <div class="d-flex flex-row title-container"> 
+            {{ title }}
+            <mat-icon class="title-icon" fontSet="fa" fontIcon="{{icon}}"></mat-icon>
+         </div>
+     </div>
+
+    <table mat-table [dataSource]="groupData" multiTemplateDataRows>
             
-        </tbody>
+        <ng-container *ngFor="let column of columns" matColumnDef="{{column}}">
+            <th mat-header-cell *matHeaderCellDef> {{column | titlecase}} </th>
+            <td mat-cell *matCellDef="let item">{{item[column]}}</td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete? </th>
+            <td mat-cell *matCellDef="let item">
+                <mat-icon fontSet="fa" fontIcon="fa-trash"></mat-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let item" [attr.colspan]="columnsToDisplay.length">
+            <div class="item-details" 
+                [@detailExpand]="expandedElement == item ? 'expanded' : 'collapsed'">
+                <div class="item-description">
+                    <strong>Description:&nbsp;</strong>{{ item.description }}<br>
+                    <span *ngIf="item.selling_price"><strong>Selling Price:&nbsp;</strong>{{ item.selling_price }}</span>
+                </div>
+            </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"
+            class="table-header"></tr>
+        <tr mat-row *matRowDef="let item; columns: columnsToDisplay;"
+            class="item-row" 
+            [class.expanded-row]="expandedElement == item"
+            (click)="toggleExpansion(item)"></tr>
+        <tr mat-row *matRowDef="let item; columns: ['expandedDetail']"
+            class="detail-row"></tr>
+    
     </table>
+
 </div>
