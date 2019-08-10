@@ -48,6 +48,7 @@ export interface Character {
     race?: string;
     level: number;
     experience: number;
+    xp_to_next_level: number;
     current_hp: number;
     max_hp: number;
     current_crit_hp?: number;

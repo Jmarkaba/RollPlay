@@ -16,8 +16,14 @@
             </div>
             <!-- BODY -->
             <mat-tab-group class="modal-body" mat-align-tabs="center">
-                <mat-tab *ngFor="let tab of tabs" label="{{tab.label}}">
+                <mat-tab label="Basic Info">
+                    <cs-basic-info [character]="character"></cs-basic-info>
+                </mat-tab>
+                <mat-tab label="Inventory">
                     <cs-inventory [inventory]="inventory"></cs-inventory>
+                </mat-tab>
+                <mat-tab label="Attributes/Abilities">
+                    Empty for Now
                 </mat-tab>
             </mat-tab-group>
             
@@ -26,7 +32,7 @@
             <div class="modal-footer">
                 <button type="button" mdbBtn color="primary" (click)="update()"
                     class="relative waves-light" mdbWavesEffect>Save</button>
-                <button type="button" mdbBtn color="secondary" (click)="hide()"
+                <button type="button" mdbBtn color="accent" (click)="hide()"
                     class="waves-light" aria-label="Close" mdbWavesEffect>Close</button>
             </div>
         </div>

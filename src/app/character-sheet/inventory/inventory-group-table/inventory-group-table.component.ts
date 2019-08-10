@@ -21,19 +21,18 @@ export class InventoryGroupTableComponent implements OnInit{
 
 
     public expandedElement: Item | null = null;
-    public columns: string[] = ['name', 'quantity'];
+    public columns: string[] = ['name'];
     public columnsToDisplay: string[];
 
     constructor() {}
 
     ngOnInit() {
-        this.groupData.forEach(item => item.quantity = item.quantity ? item.quantity : 1);
         this.groupData.sort(this.compareItems);
         if(this.title === 'Weapons')
-            this.columns = ['name', 'damage_roll', 'bonus_damage', 'penetration', 'quantity'];
+            this.columns = ['name', 'damage_roll', 'bonus_damage', 'penetration'];
         else if(this.title === 'Armor')
-            this.columns = ['name', 'armor_class', 'magic_armor', 'quantity'];
-        this.columnsToDisplay = this.columns.concat('delete');
+            this.columns = ['name', 'armor_class', 'magic_armor'];
+        this.columnsToDisplay = this.columns.concat(['quantity','delete']);
     }
 
     get icon(): string {

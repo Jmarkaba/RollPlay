@@ -15,31 +15,54 @@
     }
 }
 
+@mixin mat-table-columns($columns)
+{
+    .mat-column-
+    {
+        @each $colName, $props in $columns {
+
+            &#{$colName} 
+            {
+                display: flexbox;
+                @if map-has-key($props, 'width')  {
+                    min-width: map-get($props, 'width');
+                }
+                @if map-has-key($props, 'content-place') 
+                {
+                    justify-content: map-get($props, 'content-place');
+                }
+                @else
+                {
+                    text-align: center;
+                }
+            }  
+        }
+    }
+}
+@include mat-table-columns((
+
+    name: (width: 100px, content-place: flex-start),
+    damage_roll: (),
+    bonus_damage: (),
+    penetration: (),
+    armor_class: (),
+    magic_armor: (),
+    quantity: (width: 8%),
+    delete: (width: 8%)
+
+));
+
 table {
-    width: 100%;
+    align-self: center;
+    justify-self: center;
+    width: 95%;
     background-color: #E0E0E0 !important;
     border-collapse: separate;
-
-    .mat-column- {
-        text-align: center;
-    }
-
-    .mat-column-name {
-        min-width: 40px;
-    }
-
-    .mat-column-delete{
-        max-width: 25px;
-        text-align: end !important;
-    }
-    .mat-column-quantity {
-        text-align: right !important;
-    }
+    border-radius: 50px !important;
     
     tr.table-header {
         background-color: gray;
-        height: 25px;
-        border-radius: 20px;
+        height: 25px !important;
     }
 
     tr.detail-row {
@@ -59,14 +82,6 @@ table {
         cursor: pointer;
     }
 
-    .item-cell {
-        display: flex;
-        align-items: center;
-        .item-name {
-            width: 90%;
-        }
-    }
-
     .item-details {
         overflow: hidden;
         display: flex;
@@ -75,4 +90,10 @@ table {
     .item-description {
         padding: 16px;
     }
+}
+
+.item-quantity-box {
+    height: 150%;
+    background-color: rgb(115, 233, 131);
+    border-radius: 5px;
 }

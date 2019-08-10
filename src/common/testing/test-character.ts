@@ -44,6 +44,7 @@ export const TestCharacter: Character = {
     race: 'Human',
     level: 2,
     experience: 100,
+    xp_to_next_level: 300,
     current_hp: 20,
     max_hp: 36,
     current_crit_hp: 5,

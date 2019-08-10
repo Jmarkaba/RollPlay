@@ -11,11 +11,6 @@ import { TestCharacter } from 'src/common/testing/test-character';
 export class CharacterSheetComponent implements OnDestroy {
     private subscribes: Subscription[];
     private character: Character;
-    private tabs = [
-        {label: 'Basic Info', content: 'THis is number one'},
-        {label: 'Inventory', content: 'THis is number one'},
-        {label: 'Spells/Skills', content: 'THis is number one'}
-    ]
 
     @ViewChild('characterModal', { static: false }) characterModal;
 
