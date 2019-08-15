@@ -1,0 +1,11 @@
+<div id="game-board" class="d-inline-flex">
+    <canvas #canvas [width]="width" [height]="height"></canvas>
+    <div class="d-block overlay" [class.width]="width" [class.height]="height">
+        <div class="row" *ngFor="let row_num of rows">
+            <board-tile *ngFor="let tile_num of tiles" 
+            [x]="tile_num" [y]="row_num" 
+            [size]="tileSize"></board-tile>
+        </div>
+    </div>
+    <img #final>
+</div>

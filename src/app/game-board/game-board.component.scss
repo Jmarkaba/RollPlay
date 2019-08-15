@@ -1,0 +1,18 @@
+#game-board {
+    border-color: black;
+    border-width: rem(5);
+    border-style: solid;
+
+    padding: 0;
+    margin: 0;
+    
+    .overlay {
+        position: absolute;
+        .row {
+            display: inline-flexbox;
+            padding: inherit;
+            margin: inherit;
+            flex-wrap: nowrap;
+        }
+    }
+}

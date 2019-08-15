@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CharacterSheetModule } from './character-sheet/character-sheet.module';
+import { GameBoardModule } from './game-board/game-board.module';
 
 import { AppComponent } from './app.component';
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    CharacterSheetModule
+    CharacterSheetModule,
+    GameBoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
