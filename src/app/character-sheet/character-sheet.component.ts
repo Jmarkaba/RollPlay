@@ -1,6 +1,8 @@
 import { Component, ViewChild, OnDestroy } from "@angular/core";
-import { Character, Inventory } from 'src/common/models/character';
+import { Character } from 'src/common/models/character.model';
+import { Inventory } from 'src/common/models/inventory.model';
 import { Subscription } from 'rxjs';
+
 import { TestCharacter } from 'src/common/testing/test-character';
 
 @Component({
@@ -18,16 +20,16 @@ export class CharacterSheetComponent implements OnDestroy {
         this.character = TestCharacter;
     }
     get name(): string {
-        return this.character.name;
+        return this.character.info.name;
     }
     get level(): number {
-        return this.character.level;
+        return this.character.info.level;
     }
     get class(): string | boolean {
-        return this.character.class || false;
+        return this.character.info.class || false;
     }
     get race(): string | boolean {
-        return this.character.race || false;
+        return this.character.info.race || false;
     }
     get inventory(): Inventory {
         return this.character.inventory;

@@ -1,13 +1,13 @@
-import { AbilityType } from 'src/common/enums/character-types';
-import { 
-    Character, 
-    Inventory, 
-    Ability, 
-    Weapon, 
-    Armor, 
-    Money
-} from "src/common/models/character";
+import { Money, Weapon, Armor, Inventory } from '../models/inventory.model';
+import { Ability } from 'src/common/models/ability.model';
+import { Character, BasicInfo } from "src/common/models/character.model";
 
+import { AbilityType } from 'src/common/enums/character-types';
+
+
+/**
+ * Inventory
+ */
 export const TestMoney: Money = {
     gold: 200,
     silver: 0,
@@ -34,17 +34,41 @@ export const TestInventory: Inventory = {
     weapons: [TestWeapon],
     armor: [TestArmor]
 };
+
+/**
+ * Ability
+ */
 export const TestAbilities: Ability[] = [
     { name: 'Strength', type: AbilityType.PASSIVE, description: 'Makes you stronger' },
-    { name: 'Shields', type: AbilityType.SKILL, description: 'Temporarily increases your health', effects: { current_hp: 10 } }
+    { 
+        name: 'Shields', type: AbilityType.SKILL, description: 'Temporarily increases your health', 
+        //effects: [
+        //    { value: 'current_hp', change: 10, duration: 10 } 
+        //]
+    }
 ];
-export const TestCharacter: Character = {
+
+/**
+ * Basic Info
+ */
+export const TestInfo: BasicInfo = {
     name: 'Testies Tester',
     class: 'Warlock',
     race: 'Human',
     level: 2,
     experience: 100,
     xp_to_next_level: 300,
+    stats: [
+        {name: 'strength', value: 10, modifier: 2},
+        {name: 'constitution', value: 5, modifier: -1}   
+    ]
+}
+
+/**
+ * Character(s)
+ */
+export const TestCharacter: Character = {
+    info: TestInfo,
     current_hp: 20,
     max_hp: 36,
     current_crit_hp: 5,

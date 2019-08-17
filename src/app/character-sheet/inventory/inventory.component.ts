@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Inventory } from 'src/common/models/character';
+import { Inventory } from 'src/common/models/inventory.model';
 
 
 @Component({

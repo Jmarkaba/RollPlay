@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Item } from 'src/common/models/character';
+import { Item } from 'src/common/models/inventory.model';
 import { state, trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
