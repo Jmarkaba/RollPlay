@@ -10,16 +10,28 @@
 
         <table mat-table [dataSource]="groupData" multiTemplateDataRows>
                 
-            <ng-container *ngFor="let column of columns" matColumnDef="{{column}}">
-                <th mat-header-cell *matHeaderCellDef> {{column | keyToName | titlecase}} </th>
-                <td mat-cell *matCellDef="let item">{{item[column] | fillval}}</td>
-            </ng-container>
             <ng-container matColumnDef="quantity">
                 <th mat-header-cell *matHeaderCellDef> Quantity </th>
                 <td mat-cell *matCellDef="let item">
                     <div class="d-flex align-items-center justify-content-center item-quantity-box">
-                        {{item.quantity | fillval:'0'}}
+                        <span>{{item.quantity | fillval:'0'}}</span>
                     </div>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> 
+                    <div class="item-name-box">&nbsp;Name</div>
+                </th>
+                <td mat-cell *matCellDef="let item">
+                    <div class="item-name-box">{{item.name}}</div>
+                </td>
+            </ng-container>
+            <ng-container *ngFor="let column of columns" matColumnDef="{{column}}">
+                <th mat-header-cell *matHeaderCellDef> 
+                    <span>{{column | keyToName | titlecase}}</span> 
+                </th>
+                <td mat-cell *matCellDef="let item">
+                    <span>{{item[column] | fillval}}</span>
                 </td>
             </ng-container>
             <ng-container matColumnDef="delete">

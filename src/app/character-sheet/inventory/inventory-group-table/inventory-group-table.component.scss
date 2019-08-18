@@ -23,13 +23,15 @@
 
             &#{$colName} 
             {
-                display: flexbox;
+                @if map-has-key($props, 'min-width')  {
+                    min-width: map-get($props, 'min-width');
+                }
                 @if map-has-key($props, 'width')  {
-                    min-width: map-get($props, 'width');
+                    width: map-get($props, 'width');
                 }
                 @if map-has-key($props, 'content-place') 
                 {
-                    justify-content: map-get($props, 'content-place');
+                    text-align: map-get($props, 'content-place');
                 }
                 @else
                 {
@@ -41,7 +43,7 @@
 }
 @include mat-table-columns((
 
-    name: (width: 100px, content-place: flex-start),
+    name: (min-width: 30%, width: 250px, content-place: left),
     damage_roll: (),
     bonus_damage: (),
     penetration: (),
@@ -93,7 +95,14 @@ table {
 }
 
 .item-quantity-box {
-    height: 150%;
+    height: 3em;
     background-color: rgb(115, 233, 131);
-    border-radius: 5px;
+    border-radius: 1em;
+    border-style: groove;
+    border-color: rgb(73, 146, 82);
+    border-width: 1px;
+}
+
+.item-name-box {
+    margin: 0 2em;
 }

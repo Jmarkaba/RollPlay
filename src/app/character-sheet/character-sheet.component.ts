@@ -12,7 +12,7 @@ import { TestCharacter } from 'src/common/testing/test-character';
 })
 export class CharacterSheetComponent implements OnDestroy {
     private subscribes: Subscription[];
-    private character: Character;
+    public character: Character;
 
     @ViewChild('characterModal', { static: false }) characterModal;
 

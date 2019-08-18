@@ -2,7 +2,7 @@
 
 RollPlay is intended as a web application that can be used for playing tabletop role-playing games (but more specifically homebrew games) similar to Dungeons and Dragons.
 
-The website will be hosted on Heroku when a development model is ready.
+The website is currently hosted on Heroku, but does very little and is not ready as a working model yet.
 
 ## About Angular
 

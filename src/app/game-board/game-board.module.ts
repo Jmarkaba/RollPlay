@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 import { SharedModule } from '../shared/shared.module';
 
 // Components
-import { TestComponent as TokenComponent } from './token/token.component';
+import { TokenComponent } from './token/token.component';
 import { BoardTileComponent } from './board-tile/board-tile.component';
 import { GameBoardComponent } from './game-board.component';
 import { BrowserModule } from '@angular/platform-browser';

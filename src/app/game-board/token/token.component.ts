@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
     templateUrl: './token.component.html',
     styleUrls: ['./token.component.scss']
 })
-export class TestComponent {
+export class TokenComponent {
 
     constructor() {}
 }

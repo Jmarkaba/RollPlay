@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { TokenComponent } from '../token/token.component';
 
 
 @Component({
@@ -10,13 +11,17 @@ export class BoardTileComponent {
 
     @Input('size') size;
 
-    @Input() public x: number;
-    @Input() public y: number;
+    @Input() x: number;
+    @Input() y: number;
 
-    private currentToken;
-    private disabled: Boolean = false;
+    public currentToken: TokenComponent;
+    public disabled: Boolean = false;
 
     constructor() {}
+
+    get empty(): boolean {
+        return Boolean(this.currentToken);
+    }
 
     /**
      * Returns whether the tile is reachable from another

@@ -17,11 +17,11 @@ import { state, trigger, transition, style, animate } from '@angular/animations'
 export class InventoryGroupTableComponent implements OnInit{
 
     @Input('title') title: String;
-    @Input('groupData') private groupData: Item[];
+    @Input('groupData') groupData: Item[];
 
 
     public expandedElement: Item | null = null;
-    public columns: string[] = ['name'];
+    public columns: string[] = [];
     public columnsToDisplay: string[];
 
     constructor() {}
@@ -29,10 +29,10 @@ export class InventoryGroupTableComponent implements OnInit{
     ngOnInit() {
         this.groupData.sort(this.compareItems);
         if(this.title === 'Weapons')
-            this.columns = ['name', 'damage_roll', 'bonus_damage', 'penetration'];
+            this.columns.push('damage_roll', 'bonus_damage', 'penetration');
         else if(this.title === 'Armor')
-            this.columns = ['name', 'armor_class', 'magic_armor'];
-        this.columnsToDisplay = this.columns.concat(['quantity','delete']);
+            this.columns.push('armor_class', 'magic_armor');
+        this.columnsToDisplay = ['quantity', 'name'].concat(this.columns,['delete']);
     }
 
     get icon(): string {
