@@ -7,7 +7,7 @@ export interface InGameLocation {
 }
 
 export interface Game {
-    date: Date;
+    today: Date;
     characters: Character[];
     location: InGameLocation;
     time_elapsed?: number;      // in game days

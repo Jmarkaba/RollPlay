@@ -3,6 +3,7 @@ import {
     MatTableModule, 
     MatExpansionModule,
     MatTabsModule,
+    MatTooltipModule,
     MatIconModule,
     MatIconRegistry
 } from '@angular/material';
@@ -15,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTableModule,
     MatExpansionModule,
     MatTabsModule,
+    MatTooltipModule,
     MatIconModule
   ],
   providers: [
@@ -24,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatTableModule,
     MatExpansionModule,
+    MatTooltipModule,
     MatTabsModule,
     MatIconModule
   ]

@@ -23,7 +23,7 @@ export const TestArmor: Armor = {
     name: 'leather armor',
     description: 'Basic leather armor',
     armor_class: 2,
-    selling_price: 22
+    selling_price: { gold: 22 }
 };
 export const TestInventory: Inventory = {
     money: TestMoney,
@@ -69,10 +69,8 @@ export const TestInfo: BasicInfo = {
  */
 export const TestCharacter: Character = {
     info: TestInfo,
-    current_hp: 20,
-    max_hp: 36,
-    current_crit_hp: 5,
-    max_crit_hp: 5,
+    hitpoints: {current: 20, max: 36},
+    crit_hp: {current: 5, max: 5},
     inventory: TestInventory,
     abilities: TestAbilities,
     attributes: {

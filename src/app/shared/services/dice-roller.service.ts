@@ -10,7 +10,7 @@ export class DiceRollerService {
     public roll(d: number): number {
         return (d <= 0) 
             ? 0
-            : Math.round(Math.random()) * d;
+            : Math.ceil((Math.random() * d));
     }
 
     public rollDice(ntimes: number, d: number): number {

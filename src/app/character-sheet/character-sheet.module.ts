@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 
 // Modules
 import { SharedModule } from '../shared/shared.module';
-import { MaterialModule } from '../naterial.module';
+import { MaterialModule } from '../material.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 // Components

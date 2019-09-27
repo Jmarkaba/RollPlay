@@ -1,4 +1,15 @@
-<div class="token">
-    TOKEN
-    <!--<img [src]="image" [width]="size" [height]="size">-->
+<ng-template #characterPopup>
+    <div class="character-details">
+        <div class="health">
+            {{data.health.current}}
+        </div>
+    </div>
+</ng-template>
+
+<div 
+class="d-flex token"
+[mdbPopover]="characterPopup"
+triggers="hover"
+placement="top">
+    <img [src]="data.image">
 </div>

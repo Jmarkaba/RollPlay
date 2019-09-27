@@ -2,13 +2,14 @@ import { NgModule } from "@angular/core";
 
 // Modules
 import { SharedModule } from '../shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { PopoverModule, WavesModule } from 'angular-bootstrap-md';
+
 
 // Components
 import { TokenComponent } from './token/token.component';
 import { BoardTileComponent } from './board-tile/board-tile.component';
 import { GameBoardComponent } from './game-board.component';
-import { BrowserModule } from '@angular/platform-browser';
-
 
 @NgModule({
     declarations: [
@@ -17,8 +18,10 @@ import { BrowserModule } from '@angular/platform-browser';
         GameBoardComponent
     ],
     imports: [
+        SharedModule,
         BrowserModule,
-        SharedModule
+        PopoverModule,
+        WavesModule
     ],
     providers: [],
     exports: [

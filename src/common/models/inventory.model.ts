@@ -8,8 +8,8 @@ export interface Item {
     name: string;
     description: string;
     quantity?: number;
-    buying_price?: number;
-    selling_price?: number;
+    buying_price?: Money;
+    selling_price?: Money;
 }
 export interface Weapon extends Item {
     damage_roll: string;
@@ -18,6 +18,7 @@ export interface Weapon extends Item {
 }
 export interface Armor extends Item {
     armor_class: number;
+    magic_armor?: number;
 }
 export interface Inventory {
     money: Money;

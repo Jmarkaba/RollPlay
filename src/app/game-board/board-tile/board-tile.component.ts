@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { TokenComponent } from '../token/token.component';
+import { TokenData } from '../token/token.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class BoardTileComponent {
     @Input() x: number;
     @Input() y: number;
 
-    public currentToken: TokenComponent;
+    public currentToken: TokenData;
     public disabled: Boolean = false;
 
     constructor() {}
@@ -35,6 +35,11 @@ export class BoardTileComponent {
         
         const movement = Math.abs(currentX - this.x) + Math.abs(currentY - this.y);
         return override ? override : movement <= move;
+    }
+
+    public setToken(token: TokenData) {
+        this.currentToken = token;
+        console.log(this.currentToken);
     }
 
     /**

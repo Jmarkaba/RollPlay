@@ -2,6 +2,18 @@ import { Inventory } from './inventory.model';
 import { Ability } from './ability.model';
 
 
+interface Fractional {
+    current: number;
+    max: number;
+}
+export type Health = Fractional;
+export type Mana = Fractional;
+
+export interface CharacterStat {
+    name: string, 
+    value: number, 
+    modifier: number
+}
 export interface BasicInfo {
     name: string;
     level: number;
@@ -15,18 +27,17 @@ export interface BasicInfo {
     weight?: number;
     vision?: string;
     deity?: string;
-    stats: {name: string, value: number, modifier: number}[];
+    stats: CharacterStat[];
     bio?: string;
 }
-
 
 export interface Character {
     id?: string;
     info: BasicInfo;
-    current_hp: number;
-    max_hp: number;
-    current_crit_hp?: number;
-    max_crit_hp?: number;
+    image?: string | Blob;
+    hitpoints: Health;
+    crit_hp: Health;
+    mana?: Mana;
     inventory: Inventory;
     attributes: Object;
     abilities: Ability[];

@@ -1,5 +1,41 @@
 .token {
+    cursor: pointer;
+
     border-style: ridge;
     border-color: black;
-    border-radius: 10%;
+    border-radius: 50%;
+    border-width: 1px;
+
+    background-color: #E0E0E0;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-content: center;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.popover {
+    background-color: blue !important;
+}
+.popover-body {
+    background-color: blue !important;
+}
+.character-details {
+
+    background: rgba(0, 0, 0, 0);
+    .health {
+        width: 100%;
+        height: auto;
+        background-color: rgb(183, 241, 183);
+        border-color: rgb(81, 138, 81);
+        border-style: solid;
+        border-radius: 50%;
+        border-width: 1px;
+
+    }
 }
