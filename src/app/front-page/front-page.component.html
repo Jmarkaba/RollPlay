@@ -1,0 +1,51 @@
+<div class="d-flex flex-row title">
+    <div class="icon">
+        <mat-icon fontSet="fa" fontIcon="fa-dice-d20" color="primary"></mat-icon>
+    </div>
+    <span class="title-text" fontSet="fa">Rollplay</span>
+</div>
+<mat-divider></mat-divider>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand"></a></mdb-navbar-brand>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Join a Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>About</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                  <mdb-icon fas icon="user"></mdb-icon> Sign In <span class="caret"></span></a>
+                <div  *dropdownMenu (click)="$event.stopPropogation()" class="dropdown-menu dropdown-menu-right dropdown dropdown-primary">
+                  <div click-stop-propagation class="flex-column signin">
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input matInput [type]="email">
+                        <span matSuffix></span>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon fontSet="fa" fontIcon="{{hide ? 'fa-eye-slash' : 'fa-eye'}}"></mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary">Sign In</button>
+                    <br><br><mat-divider></mat-divider><br>
+                    <a color="accent" href="#" class="hyperlink"><span>New here?&nbsp;Sign Up.</span></a><br>
+                    <a color="accent" href="#" class="hyperlink"><span>Forgot password?</span></a>
+                  </div>
+                </div>
+              </li>
+         </ul>
+    </links>
+</mdb-navbar>

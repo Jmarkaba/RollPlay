@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+    align-content: center;
+    font-size: 5rem;
+    font-family: -apple-system, Brush Script MT, Brush Script Std, cursive;
+    font-style: italic;
+    .icon {
+        text-align: center;
+
+    }
+    .title-text {
+        margin-left: 5px;
+        font-size: 6rem;
+    }
+}
+
+.signin {
+    margin: 1em;
+}
+
+.hyperlink {
+    :hover {
+        color: #0000EE !important;
+    }
+}
