@@ -19,6 +19,7 @@ export interface Weapon extends Item {
 export interface Armor extends Item {
     armor_class: number;
     magic_armor?: number;
+    dodge?: number;
 }
 export interface Inventory {
     money: Money;

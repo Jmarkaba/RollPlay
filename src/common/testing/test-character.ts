@@ -2,7 +2,7 @@ import { Money, Weapon, Armor, Inventory } from '../models/inventory.model';
 import { Ability } from 'src/common/models/ability.model';
 import { Character, BasicInfo } from "src/common/models/character.model";
 
-import { AbilityType } from 'src/common/enums/character-types';
+import { AbilityType, RegenType } from 'src/common/enums/character-types';
 
 
 /**
@@ -40,11 +40,12 @@ export const TestInventory: Inventory = {
  */
 export const TestAbilities: Ability[] = [
     { name: 'Strength', type: AbilityType.PASSIVE, description: 'Makes you stronger' },
+    { name: 'Shields', type: AbilityType.SKILL, description: 'Temporarily increases your health' },
     { 
-        name: 'Shields', type: AbilityType.SKILL, description: 'Temporarily increases your health', 
-        //effects: [
-        //    { value: 'current_hp', change: 10, duration: 10 } 
-        //]
+        name: 'Fireball', 
+        type: AbilityType.SPELL, 
+        regen: { type: RegenType.TURN, length: 8, remaining: 0 },
+        description: 'Temporarily increases your health' 
     }
 ];
 

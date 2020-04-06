@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnDestroy } from "@angular/core";
 import { Character } from 'src/common/models/character.model';
 import { Inventory } from 'src/common/models/inventory.model';
+import { Ability } from 'src/common/models/ability.model';
 import { Subscription } from 'rxjs';
 
 import { TestCharacter } from 'src/common/testing/test-character';
@@ -33,6 +34,9 @@ export class CharacterSheetComponent implements OnDestroy {
     }
     get inventory(): Inventory {
         return this.character.inventory;
+    }
+    get abilities(): Ability[] {
+        return this.character.abilities;
     }
 
     show(): void {

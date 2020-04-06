@@ -47,7 +47,7 @@
                     [@detailExpand]="expandedElement == item ? 'expanded' : 'collapsed'">
                     <div class="item-description">
                         <strong>Description:&nbsp;</strong>{{ item.description }}<br>
-                        <span *ngIf="item.selling_price"><strong>Selling Price:&nbsp;</strong>{{ item.selling_price }}</span>
+                        <span *ngIf="item.selling_price"><strong>Selling Price:&nbsp;</strong>{{ item.selling_price.gold }}</span>
                     </div>
                 </div>
                 </td>

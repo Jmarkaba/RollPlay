@@ -1,7 +1,7 @@
 export enum AbilityType {
-    'PASSIVE' = 0,
-    'SPELL' = 1,
-    'SKILL' = 2
+    'PASSIVE',
+    'SPELL',
+    'SKILL'
 }
 export enum RegenType {
     'TURN',

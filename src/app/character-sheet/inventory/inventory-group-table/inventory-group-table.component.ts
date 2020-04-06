@@ -27,11 +27,11 @@ export class InventoryGroupTableComponent implements OnInit{
     constructor() {}
 
     ngOnInit() {
-        this.groupData.sort(this.compareItems);
+        this.groupData.sort((a: Item, b: Item) => a.name < b.name ? -1 : 1);
         if(this.title === 'Weapons')
             this.columns.push('damage_roll', 'bonus_damage', 'penetration');
         else if(this.title === 'Armor')
-            this.columns.push('armor_class', 'magic_armor');
+            this.columns.push('armor_class', 'magic_armor', 'dodge');
         this.columnsToDisplay = ['quantity', 'name'].concat(this.columns,['delete']);
     }
 
@@ -41,10 +41,6 @@ export class InventoryGroupTableComponent implements OnInit{
             case 'Armor': return 'fa-shield-alt';
             default: return 'fa-journal-whills'
         }
-    }
-
-    compareItems(a: Item, b: Item): -1 | 1 {
-        return a.name < b.name ? -1 : 1;
     }
 
     update(index: number, key: string, event: any): void {

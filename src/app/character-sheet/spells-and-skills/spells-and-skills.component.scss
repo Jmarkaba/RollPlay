@@ -1,0 +1,67 @@
+.table-title {
+    background-color: black;
+    color: #E0E0E0 !important;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    margin: 15px 5px 10px 5px;
+    .title-container {
+        justify-content: space-between;
+        .title-icon {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+    }
+}
+table {
+    align-self: center;
+    justify-self: center;
+    width: 95%;
+    background-color: #E0E0E0 !important;
+    border-collapse: separate;
+    border-radius: 50px !important;
+    
+    tr.table-header {
+        background-color: gray;
+        height: 25px !important;
+    }
+
+    tr.detail-row {
+        height: 0;
+    }
+
+    tr.ability-row:not(.expanded-row):hover {
+        background-color: #E7E7E7;
+    }
+
+    tr.ability-row:not(.expanded-row):active {
+        background-color: inherit;
+    }
+
+    .ability-row td {
+        border-bottom-width: 0;
+        cursor: pointer;
+    }
+
+    .ability-details {
+        overflow: hidden;
+        display: flex;
+    }
+
+    .ability-description {
+        padding: 16px;
+    }
+}
+
+.ability-type-box {
+    height: 3em;
+    background-color: rgb(115, 233, 131);
+    border-radius: 1em;
+    border-style: groove;
+    border-color: rgb(73, 146, 82);
+    border-width: 1px;
+}
+.ability-name-box {
+    margin: 0 2em;
+}

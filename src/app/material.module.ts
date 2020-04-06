@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
-import { 
-    MatTableModule, 
-    MatExpansionModule,
-    MatTabsModule,
-    MatTooltipModule,
-    MatIconModule,
-    MatIconRegistry
-} from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 

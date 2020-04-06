@@ -3,6 +3,7 @@ import { AbilityType, RegenType } from 'src/common/enums/character-types';
 export interface Regen {
     type: RegenType,
     length?: number;
+    remaining: number;
 }
 export interface Effect {
     prop: string;
@@ -11,11 +12,9 @@ export interface Effect {
 }
 export interface Ability {
     name: string;
-    active?: boolean;
     type: AbilityType;
     description: string;
     regen?: Regen;
-    targets?: string[];
     self_effects?: Effect[];
     target_effects?: Effect[];
 }
